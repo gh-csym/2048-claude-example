@@ -1,0 +1,114 @@
+{
+  "_warning": "Feature definitions are IMMUTABLE after planning approval. Only 'status' and 'subtasks[].status' may be modified.",
+  "_planApproved": false,
+  "_planApprovedAt": null,
+  "_modifiableFields": ["status", "subtasks[].status"],
+  "features": [
+    {
+      "id": "F001",
+      "name": "Score History Sidebar",
+      "description": "Add an always-visible sidebar that displays complete game history chronologically with score and date for each game",
+      "priority": "P0",
+      "status": "completed",
+      "passes": true,
+      "verifiedAt": "2026-02-19T02:30:00Z",
+      "implementationOrder": 1,
+      "dependencies": [],
+      "blockedBy": [],
+      "estimatedHours": 7,
+      "planReference": "EPCC_PLAN.md",
+      "acceptanceCriteria": [
+        "Sidebar is always visible on desktop during gameplay",
+        "All previous games are displayed in chronological order (newest first)",
+        "Each entry shows score and date",
+        "History persists in localStorage across sessions",
+        "Clear History button works with confirmation",
+        "Empty state displays when no games have been played",
+        "Sidebar is responsive (hidden on mobile screens <768px)",
+        "Existing leaderboard functionality remains unchanged",
+        "All tests pass with ≥80% coverage",
+        "TypeScript compilation passes",
+        "ESLint passes with no warnings"
+      ],
+      "subtasks": [
+        {
+          "name": "Create scoreHistory utility module with storage functions",
+          "status": "completed",
+          "estimatedHours": 1.5,
+          "phase": 1,
+          "description": "Implement getScoreHistory, addScoreHistoryEntry, clearScoreHistory functions following leaderboard.ts pattern"
+        },
+        {
+          "name": "Add ScoreHistoryEntry type definition",
+          "status": "completed",
+          "estimatedHours": 0.5,
+          "phase": 1,
+          "description": "Add interface to src/types/game.ts with id, score, date, moves, won fields"
+        },
+        {
+          "name": "Write scoreHistory utility tests",
+          "status": "completed",
+          "estimatedHours": 1,
+          "phase": 1,
+          "description": "Unit tests for all scoreHistory utility functions, localStorage mocking, error scenarios"
+        },
+        {
+          "name": "Create ScoreHistory component",
+          "status": "completed",
+          "estimatedHours": 1.5,
+          "phase": 2,
+          "description": "Build sidebar component with entry list, clear button, empty state, date formatting"
+        },
+        {
+          "name": "Add ScoreHistory CSS with responsive design",
+          "status": "completed",
+          "estimatedHours": 1,
+          "phase": 2,
+          "description": "Style sidebar with fixed width, scrolling, responsive behavior for mobile"
+        },
+        {
+          "name": "Write ScoreHistory component tests",
+          "status": "completed",
+          "estimatedHours": 1,
+          "phase": 2,
+          "description": "Component tests for rendering, empty state, clear functionality, date formatting"
+        },
+        {
+          "name": "Update Game.tsx layout to include sidebar",
+          "status": "completed",
+          "estimatedHours": 0.5,
+          "phase": 3,
+          "description": "Add ScoreHistory component to Game.tsx and update CSS Grid layout in Game.css"
+        },
+        {
+          "name": "Update useGame hook to save history on game end",
+          "status": "completed",
+          "estimatedHours": 0.5,
+          "phase": 3,
+          "description": "Add effect to call addScoreHistoryEntry when game status changes to lost/won"
+        },
+        {
+          "name": "Update component barrel export",
+          "status": "completed",
+          "estimatedHours": 0.1,
+          "phase": 3,
+          "description": "Add ScoreHistory export to src/components/index.ts"
+        },
+        {
+          "name": "Integration testing and QA",
+          "status": "completed",
+          "estimatedHours": 0.5,
+          "phase": 3,
+          "description": "Manual testing: play games, verify history saves, check layout, test responsiveness"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "projectName": "2048 React Game",
+    "totalFeatures": 1,
+    "totalEstimatedHours": 7,
+    "created": "2026-02-19",
+    "lastUpdated": "2026-02-19"
+  }
+}
