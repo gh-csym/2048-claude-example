@@ -99,7 +99,10 @@ export const ScoreHistory: React.FC = () => {
                 {entry.score.toLocaleString()}
                 {entry.won && <span className="score-history-won">🏆</span>}
               </div>
-              <div className="score-history-meta">{formatDate(entry.date)}</div>
+              <div className="score-history-meta">
+                <div>{formatDate(entry.date)}</div>
+                <div className="score-history-moves">{entry.moves} moves</div>
+              </div>
             </div>
           ))}
         </div>

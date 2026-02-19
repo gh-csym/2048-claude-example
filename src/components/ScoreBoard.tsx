@@ -6,9 +6,10 @@ interface ScoreBoardProps {
   score: number;
   bestScore: number;
   status: GameStatus;
+  moveCount: number;
 }
 
-export const ScoreBoard: React.FC<ScoreBoardProps> = ({ score, bestScore, status }) => {
+export const ScoreBoard: React.FC<ScoreBoardProps> = ({ score, bestScore, status, moveCount }) => {
   return (
     <div className="score-board">
       <div className="scores">
@@ -19,6 +20,10 @@ export const ScoreBoard: React.FC<ScoreBoardProps> = ({ score, bestScore, status
         <div className="score-container">
           <div className="score-label">BEST</div>
           <div className="score-value">{bestScore}</div>
+        </div>
+        <div className="score-container">
+          <div className="score-label">MOVES</div>
+          <div className="score-value">{moveCount}</div>
         </div>
       </div>
       {status === 'won' && (

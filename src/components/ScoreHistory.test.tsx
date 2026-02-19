@@ -68,6 +68,32 @@ describe('ScoreHistory', () => {
     expect(screen.getByText('1,024')).toBeTruthy();
   });
 
+  it('should display move counts for each entry', () => {
+    const mockEntries = [
+      {
+        id: '1',
+        score: 500,
+        date: new Date().toISOString(),
+        moves: 25,
+        won: false,
+      },
+      {
+        id: '2',
+        score: 1024,
+        date: new Date(Date.now() - 3600000).toISOString(),
+        moves: 42,
+        won: false,
+      },
+    ];
+
+    mockGetScoreHistory.mockReturnValue(mockEntries);
+
+    render(<ScoreHistory />);
+
+    expect(screen.getByText('25 moves')).toBeTruthy();
+    expect(screen.getByText('42 moves')).toBeTruthy();
+  });
+
   it('should show trophy emoji for won games', () => {
     const mockEntries = [
       {

@@ -9,7 +9,7 @@ import { ScoreHistory } from './ScoreHistory';
 import './Game.css';
 
 export const Game: React.FC = () => {
-  const { tiles, score, bestScore, status, move, newGame, continueGame } = useGame();
+  const { tiles, score, bestScore, status, moveCount, move, newGame, continueGame } = useGame();
   const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   useKeyboard({ onMove: move, enabled: status !== 'lost' });
@@ -18,7 +18,7 @@ export const Game: React.FC = () => {
     <div className="game-container">
       <div className="game-main">
         <GameControls status={status} onNewGame={newGame} onContinue={continueGame} />
-        <ScoreBoard score={score} bestScore={bestScore} status={status} />
+        <ScoreBoard score={score} bestScore={bestScore} status={status} moveCount={moveCount} />
         <Board tiles={tiles} />
         <button
           type="button"

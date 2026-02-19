@@ -121,6 +121,12 @@
   color: #9e9489;
 }
 
+.score-history-moves {
+  font-size: 11px;
+  color: #a59589;
+  margin-top: 2px;
+}
+
 /* Responsive: Hide sidebar on mobile screens */
 @media (max-width: 767px) {
   .score-history {
