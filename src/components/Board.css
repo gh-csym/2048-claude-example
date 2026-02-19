@@ -1,0 +1,52 @@
+.board {
+  position: relative;
+  padding: 15px;
+  background: #bbada0;
+  border-radius: 6px;
+  width: 500px;
+  height: 500px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-cell {
+  background: rgba(238, 228, 218, 0.35);
+  border-radius: 3px;
+}
+
+.tiles-container {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 520px) {
+  .board {
+    width: 325px;
+    height: 325px;
+    padding: 10px;
+  }
+
+  .grid-container {
+    gap: 10px;
+  }
+
+  .tiles-container {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+}

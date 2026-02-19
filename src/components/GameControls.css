@@ -1,0 +1,89 @@
+.game-controls {
+  margin-bottom: 30px;
+}
+
+.controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.game-title {
+  font-size: 80px;
+  font-weight: bold;
+  color: #776e65;
+  margin: 0;
+}
+
+.new-game-button,
+.continue-button {
+  background: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 150ms ease-in-out;
+}
+
+.new-game-button:hover,
+.continue-button:hover {
+  background: #9f8a76;
+}
+
+.new-game-button:active,
+.continue-button:active {
+  background: #7f6a56;
+}
+
+.instructions {
+  background: #eee4da;
+  padding: 15px 20px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.instructions p {
+  margin: 0;
+  color: #776e65;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.instructions strong {
+  font-weight: bold;
+}
+
+.continue-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 520px) {
+  .controls-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .game-title {
+    font-size: 50px;
+  }
+
+  .new-game-button,
+  .continue-button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .instructions {
+    padding: 12px 15px;
+  }
+
+  .instructions p {
+    font-size: 13px;
+  }
+}
