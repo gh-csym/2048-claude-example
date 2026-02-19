@@ -2,12 +2,55 @@
   font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light;
-  background-color: #faf8ef;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light theme (default) */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg-color: #faf8ef;
+  --text-color: #776e65;
+  --board-bg: #bbada0;
+  --grid-cell-bg: rgba(238, 228, 218, 0.35);
+  --score-container-bg: #bbada0;
+  --score-label-color: #eee4da;
+  --score-value-color: white;
+  --button-bg: #8f7a66;
+  --button-color: #f9f6f2;
+  --button-hover-bg: #9f8a76;
+  --leaderboard-button-bg: #edc22e;
+  --leaderboard-button-hover-bg: #edc850;
+  --game-message-bg: rgba(238, 228, 218, 0.95);
+  --game-message-color: #776e65;
+  --theme-toggle-bg: #bbada0;
+  --theme-toggle-color: #f9f6f2;
+  background-color: var(--bg-color);
+}
+
+/* Dark theme */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --board-bg: #2d2d2d;
+  --grid-cell-bg: rgba(80, 80, 80, 0.35);
+  --score-container-bg: #2d2d2d;
+  --score-label-color: #a0a0a0;
+  --score-value-color: #e0e0e0;
+  --button-bg: #404040;
+  --button-color: #e0e0e0;
+  --button-hover-bg: #505050;
+  --leaderboard-button-bg: #d4a025;
+  --leaderboard-button-hover-bg: #e4b035;
+  --game-message-bg: rgba(45, 45, 45, 0.95);
+  --game-message-color: #e0e0e0;
+  --theme-toggle-bg: #404040;
+  --theme-toggle-color: #e0e0e0;
+  background-color: var(--bg-color);
 }
 
 body {
