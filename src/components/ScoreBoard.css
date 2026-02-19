@@ -10,26 +10,28 @@
 }
 
 .score-container {
-  background: #bbada0;
+  background: var(--score-container-bg);
   padding: 15px 25px;
   border-radius: 3px;
   text-align: center;
   min-width: 80px;
+  transition: background-color 0.3s ease;
 }
 
 .score-label {
   font-size: 13px;
-  color: #eee4da;
+  color: var(--score-label-color);
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
 .score-value {
   font-size: 25px;
-  color: white;
+  color: var(--score-value-color);
   font-weight: bold;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, color 0.3s ease;
 }
 
 .score-value.score-update {
@@ -41,19 +43,21 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(238, 228, 218, 0.95);
+  background: var(--game-message-bg);
   padding: 40px;
   border-radius: 6px;
   text-align: center;
   z-index: 100;
   animation: fadeIn 300ms ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
 .game-message p {
   font-size: 60px;
   font-weight: bold;
-  color: #776e65;
+  color: var(--game-message-color);
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 .game-message.won {

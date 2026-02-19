@@ -16,14 +16,14 @@
   width: 100%;
   margin-top: 20px;
   padding: 15px 30px;
-  background: #edc22e;
-  color: #f9f6f2;
+  background: var(--leaderboard-button-bg);
+  color: var(--button-color);
   border: none;
   border-radius: 3px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 150ms ease-in-out;
+  transition: background 0.15s ease-in-out, color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,11 +31,11 @@
 }
 
 .leaderboard-button:hover {
-  background: #edc850;
+  background: var(--leaderboard-button-hover-bg);
 }
 
 .leaderboard-button:active {
-  background: #edcc61;
+  opacity: 0.8;
 }
 
 /* Tablet: Narrower sidebar */

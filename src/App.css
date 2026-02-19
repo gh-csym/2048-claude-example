@@ -3,8 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #faf8ef;
+  background: var(--bg-color);
   font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+  transition: background-color 0.3s ease;
 }
 
 * {
@@ -14,5 +15,6 @@
 body {
   margin: 0;
   padding: 0;
-  background: #faf8ef;
+  background: var(--bg-color);
+  transition: background-color 0.3s ease;
 }

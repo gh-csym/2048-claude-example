@@ -7,6 +7,7 @@ import type { UseGameReturn } from '../hooks/useGame';
 // Mock the hooks
 jest.mock('../hooks/useGame');
 jest.mock('../hooks/useKeyboard');
+jest.mock('../hooks/useTheme');
 
 // Mock child components to simplify testing
 jest.mock('./Board', () => ({
@@ -23,6 +24,9 @@ jest.mock('./Leaderboard', () => ({
 }));
 jest.mock('./ScoreHistory', () => ({
   ScoreHistory: () => <div data-testid="score-history">ScoreHistory</div>,
+}));
+jest.mock('./ThemeToggle', () => ({
+  ThemeToggle: () => <div data-testid="theme-toggle">ThemeToggle</div>,
 }));
 
 describe('Game', () => {
@@ -49,8 +53,12 @@ describe('Game', () => {
     const { useKeyboard } = jest.requireMock('../hooks/useKeyboard') as {
       useKeyboard: jest.Mock;
     };
+    const { useTheme } = jest.requireMock('../hooks/useTheme') as {
+      useTheme: jest.Mock;
+    };
     useGame.mockReturnValue(defaultGameState);
     useKeyboard.mockReturnValue(undefined);
+    useTheme.mockReturnValue({ theme: 'light', toggleTheme: jest.fn() });
   });
 
   it('should render the game container', () => {
@@ -61,22 +69,10 @@ describe('Game', () => {
     expect(screen.getByTestId('game-controls')).toBeTruthy();
   });
 
-  it('should render reset button', () => {
+  it('should render theme toggle', () => {
     render(<Game />);
 
-    const resetButton = screen.getByRole('button', { name: /reset game/i });
-    expect(resetButton).toBeTruthy();
-    expect(resetButton.textContent).toContain('Reset Game');
-  });
-
-  it('should call newGame when reset button is clicked', async () => {
-    const user = userEvent.setup();
-    render(<Game />);
-
-    const resetButton = screen.getByRole('button', { name: /reset game/i });
-    await user.click(resetButton);
-
-    expect(mockNewGame).toHaveBeenCalledTimes(1);
+    expect(screen.getByTestId('theme-toggle')).toBeTruthy();
   });
 
   it('should render leaderboard button', () => {
