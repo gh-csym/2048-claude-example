@@ -7,8 +7,9 @@ A fully functional 2048 game built with React, TypeScript, and Vite. Features sm
 - Classic 2048 gameplay with tile merging
 - Smooth animations for tile movements and merges
 - Score tracking with localStorage persistence
+- **Score History Sidebar** - View complete game history with automatic refresh
 - **Leaderboard system** - Track top 10 scores with automatic saving
-- Win/lose detection
+- Win/lose detection with visual indicators (🏆 for wins)
 - Responsive design (desktop, tablet, mobile)
 - Keyboard controls (arrow keys)
 - Full TypeScript type safety
@@ -68,7 +69,9 @@ src/
 │   ├── Board.tsx    # Game board grid
 │   ├── Tile.tsx     # Individual tile
 │   ├── ScoreBoard.tsx # Score display
+│   ├── ScoreHistory.tsx # Score history sidebar
 │   ├── GameControls.tsx # Game controls
+│   ├── Leaderboard.tsx # Top 10 leaderboard modal
 │   └── Game.tsx     # Main game component
 ├── hooks/           # Custom React hooks
 │   ├── useGame.ts   # Game state management
@@ -76,6 +79,8 @@ src/
 ├── utils/           # Utility functions
 │   ├── gameLogic.ts # Core game logic
 │   ├── tileHelpers.ts # Grid manipulation
+│   ├── scoreHistory.ts # Score history storage
+│   ├── leaderboard.ts # Leaderboard storage
 │   └── constants.ts # Game constants
 ├── types/           # TypeScript type definitions
 │   └── game.ts
